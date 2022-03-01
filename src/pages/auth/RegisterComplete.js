@@ -18,12 +18,12 @@ const RegisterComplete = ({ history }) => {
     e.preventDefault();
     //validation
     if (!email || !password) {
-      toast.error('Email And Passowrd is Required');
+      toast.error('Email And Password is Required');
       return;
     }
 
     if (password.length < 6) {
-      toast.error('Passowrd must be at least 6 character long');
+      toast.error('Password must be at least 6 character long');
       return;
     }
     try {
@@ -67,27 +67,27 @@ const RegisterComplete = ({ history }) => {
 
   const completeRegisterationForm = () => (
     <form onSubmit={handleSubmit}>
-      <input type='email' className='form-control' value={email} disabled />
+      <input type="email" className="form-control" value={email} disabled />
       <input
-        type='password'
-        className='form-control'
+        type="password"
+        className="form-control"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         autoFocus
-        placeholder='Enter Your Password'
+        placeholder="Enter Your Password"
         required
       />
       <br />
-      <button type='submit' className='btn btn-raised'>
-        Complete Registeration
+      <button type="submit" className="btn btn-raised">
+        Complete Registration
       </button>
     </form>
   );
 
   return (
-    <div className='container p-5'>
-      <div className='row'>
-        <div className='col-md-6 offset-md-3'>
+    <div className="container p-5">
+      <div className="row">
+        <div className="col-md-6 offset-md-3">
           <h4>Register Complete</h4>
 
           {completeRegisterationForm()}

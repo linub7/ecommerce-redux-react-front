@@ -39,17 +39,17 @@ const Header = () => {
   };
 
   return (
-    <Menu onClick={handleClick} selectedKeys={[current]} mode='horizontal'>
-      <Item key='home' icon={<AppstoreOutlined />}>
-        <Link to='/'>Home</Link>
+    <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
+      <Item key="home" icon={<AppstoreOutlined />}>
+        <Link to="/">Home</Link>
       </Item>
 
-      <Item key='shop' icon={<ShoppingOutlined />}>
-        <Link to='/shop'>Shop</Link>
+      <Item key="shop" icon={<ShoppingOutlined />}>
+        <Link to="/shop">Shop</Link>
       </Item>
 
-      <Item key='cart' icon={<ShoppingCartOutlined />}>
-        <Link to='/cart'>
+      <Item key="cart" icon={<ShoppingCartOutlined />}>
+        <Link to="/cart">
           <Badge count={cart.length} offset={[9, 0]}>
             Cart
           </Badge>
@@ -57,23 +57,24 @@ const Header = () => {
       </Item>
       {user && (
         <SubMenu
-          key='SubMenu'
+          className="float-right"
+          key="SubMenu"
           icon={<SettingOutlined />}
           title={user.email && user.email.split('@')[0]}
-          style={{ position: 'absolute', right: '6%' }}
+          // style={{ position: 'absolute', right: '6%' }}
         >
           {user && user.role === 'subscriber' && (
-            <Item key='setting:1'>
-              <Link to='/user/history'>Dashboard</Link>
+            <Item key="setting:1">
+              <Link to="/user/history">Dashboard</Link>
             </Item>
           )}
 
           {user && user.role === 'admin' && (
-            <Item key='setting:1'>
-              <Link to='/admin/dashboard'>Dashboard</Link>
+            <Item key="setting:1">
+              <Link to="/admin/dashboard">Dashboard</Link>
             </Item>
           )}
-          <Item key='setting:3' icon={<LogoutOutlined />} onClick={logout}>
+          <Item key="setting:3" icon={<LogoutOutlined />} onClick={logout}>
             Logout
           </Item>
         </SubMenu>
@@ -81,18 +82,18 @@ const Header = () => {
       {!user && (
         <>
           <Item
-            key='register'
+            key="register"
             icon={<UserAddOutlined />}
             style={{ position: 'absolute', right: '20%' }}
           >
-            <Link to='/register'>Register</Link>
+            <Link to="/register">Register</Link>
           </Item>
           <Item
-            key='login'
+            key="login"
             icon={<UserOutlined />}
             style={{ position: 'absolute', right: '10%' }}
           >
-            <Link to='/login'>Login</Link>
+            <Link to="/login">Login</Link>
           </Item>
         </>
       )}
